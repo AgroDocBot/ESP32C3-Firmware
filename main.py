@@ -1,9 +1,14 @@
 from wifi_setup import connect_to_wifi
-from web_server import start_server
+from web_server_ws import start_server_ws
+import uasyncio as asyncio
 
-def main():
+async def main():
     ip_address = connect_to_wifi()
     print(f"Server IP address: {ip_address}")
-    start_server()
+    await start_server_ws()
 
-main()
+try:
+    asyncio.run(main())
+except KeyboardInterrupt:
+    print("Server stopped")
+

@@ -1,7 +1,7 @@
 from machine import Pin, PWM
 import time
 
-servo_fl = PWM(Pin(7), freq=50)
+servo_fl = PWM(Pin(6), freq=50)
 servo_fr = PWM(Pin(8), freq=50)
 servo_bl = PWM(Pin(9), freq=50)
 servo_br = PWM(Pin(10), freq=50)
@@ -15,10 +15,10 @@ def move_forward():
     servo_bl.duty(96)
     servo_br.duty(60)
     time.sleep(1)
-    servo_fl.duty(0)
-    servo_fr.duty(0)
-    servo_bl.duty(0)
-    servo_br.duty(0)
+    servo_fl.duty(77)
+    servo_fr.duty(77)
+    servo_bl.duty(77)
+    servo_br.duty(77)
 
 def move_backward():
     print("Moving backward")
@@ -27,10 +27,10 @@ def move_backward():
     servo_bl.duty(60)
     servo_br.duty(96)
     time.sleep(1)
-    servo_fl.duty(0)
-    servo_fr.duty(0)
-    servo_bl.duty(0)
-    servo_br.duty(0)
+    servo_fl.duty(77)
+    servo_fr.duty(77)
+    servo_bl.duty(77)
+    servo_br.duty(77)
 
 def turn_right():
     print("Turning right")
@@ -39,10 +39,10 @@ def turn_right():
     servo_bl.duty(96)
     servo_br.duty(96)
     time.sleep(1)
-    servo_fl.duty(0)
-    servo_fr.duty(0)
-    servo_bl.duty(0)
-    servo_br.duty(0)
+    servo_fl.duty(77)
+    servo_fr.duty(77)
+    servo_bl.duty(77)
+    servo_br.duty(77)
 
 def turn_left():
     print("Turning left")
@@ -51,10 +51,10 @@ def turn_left():
     servo_bl.duty(60)
     servo_br.duty(60)
     time.sleep(1)
-    servo_fl.duty(0)
-    servo_fr.duty(0)
-    servo_bl.duty(0)
-    servo_br.duty(0)
+    servo_fl.duty(77)
+    servo_fr.duty(77)
+    servo_bl.duty(77)
+    servo_br.duty(77)
     
 def go_forward():
     print("Going forward")
@@ -83,13 +83,28 @@ def go_left():
     servo_fr.duty(60)
     servo_bl.duty(60)
     servo_br.duty(60)
+    
+def go_right_wide():
+    print("Going widely right")
+    servo_fl.duty(77)
+    servo_fr.duty(96)
+    servo_bl.duty(77)
+    servo_br.duty(96)
+
+def go_left_wide():
+    print("Going widely left")
+    servo_fl.duty(60)
+    servo_fr.duty(77)
+    servo_bl.duty(60)
+    servo_br.duty(77)
 
 def stop():
-    print("Going forward")
-    servo_fl.duty(0)
-    servo_fr.duty(0)
-    servo_bl.duty(0)
-    servo_br.duty(0)
+    print("Stopping")
+    servo_fl.duty(77)
+    servo_fr.duty(77)
+    servo_bl.duty(77)
+    servo_br.duty(77)
+    time.sleep(0.2)
 
 
     
